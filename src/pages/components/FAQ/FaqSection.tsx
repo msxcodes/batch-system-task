@@ -13,10 +13,13 @@ export default function FaqSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         <FaqCard bgColor={true} />
         <FaqCard bgColor={false} />
-        <FaqCard bgColor={false} />
+        <FaqCard bgColor={true} className="block md:hidden" />
+        <FaqCard bgColor={false} className="block md:hidden" />
+        <FaqCard bgColor={false} className="hidden md:block" />
         <FaqCard bgColor={true} />
-        <FaqCard bgColor={true} />
-        <FaqCard bgColor={false} />
+        <FaqCard bgColor={true} className="hidden md:block" />
+        <FaqCard bgColor={false} className="md:hidden block" />
+        <FaqCard bgColor={false} className="hidden md:block" />
       </div>
     </div>
   );

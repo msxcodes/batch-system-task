@@ -1,12 +1,16 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
+import React, { useRef } from "react";
 
 export default function Header() {
+  const pathName = usePathname();
+
   return (
-    <header className="flex flex-wrap items-center sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-2 sm:py-0">
+    <header className="fixed flex flex-wrap items-center  sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-2 sm:py-0">
       <nav
-        className="relative max-w-6xl w-full mx-auto px-4 sm:flex items-center justify-between sm:px-6 lg:px-8"
+        className="max-w-6xl w-full mx-auto z-50 px-4 sm:flex items-center justify-between sm:px-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex items-center justify-between gap-1">
@@ -39,9 +43,9 @@ export default function Header() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <line x1="3" x2="21" y1="6" y2="6" />
                 <line x1="3" x2="21" y1="12" y2="12" />
@@ -55,9 +59,9 @@ export default function Header() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path d="M18 6 6 18" />
                 <path d="m6 6 12 12" />
@@ -74,8 +78,14 @@ export default function Header() {
             {navItems.map((item) => {
               return (
                 <Link
-                  className="py-3 ps-px sm:px-3 sm:py-6 font-[600] text-neutral-900"
+                  key={item.name}
+                  className={`${
+                    item.name === "Home"
+                      ? "text-[#ff5555] font-[700]"
+                      : "text-black"
+                  } py-3 ps-px sm:px-3 sm:py-6 font-[500] hover:text-[#ff5555] transition-all duration-300 `}
                   href={item.href}
+                  onClick={() => console.log(pathName)}
                   aria-current="page"
                 >
                   {item.name}
@@ -88,7 +98,7 @@ export default function Header() {
                 className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600"
                 href="#"
               >
-                <button className="max-w-max bg-gray-900 px-6 py-3 text-white transition hover:bg-gray-700 rounded-sm">
+                <button className="max-w-max bg-gray-900 px-6 py-3 text-white transition-all duration-150 hover:bg-transparent hover:border-2 hover:text-black hover:border-black rounded-sm">
                   Download
                 </button>
               </a>
@@ -103,18 +113,25 @@ export default function Header() {
 const navItems = [
   {
     name: "Home",
-    href: "#",
-  },
-  {
-    name: "About Us",
-    href: "#",
-  },
-  {
-    name: "Pricing",
-    href: "#",
+    href: "#hero",
+    path: "home",
   },
   {
     name: "Features",
-    href: "#",
+    href: "#features",
+    path: "home",
+  },
+  {
+    name: "Pricing",
+    href: "#pricing",
+
+    path: "home",
+  },
+
+  {
+    name: "About Us",
+    href: "#aboutus",
+
+    path: "home",
   },
 ];

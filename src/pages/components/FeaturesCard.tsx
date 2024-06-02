@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import FeaturesIphone from "../../../public/features/features-iphone.png";
 import BlurBox from "../../../public/features/features-blurBox.png";
 import CubeIcon from "../../../public/features/cube.png";
@@ -8,8 +8,11 @@ import StarIcon from "../../../public/features/star.png";
 
 export default function FeaturesCard() {
   return (
-    <div className="max-w-6xl md:mx-auto grid grid-cols-1 md:grid-cols-12 mx-8 ">
-      <div className="col-span-5 relative ">
+    <div
+      id="features"
+      className="max-w-6xl md:py-12 md:mx-auto grid grid-cols-1 md:grid-cols-12 mx-8 "
+    >
+      <div className="col-span-5 relative">
         <Image
           src={BlurBox}
           alt=""

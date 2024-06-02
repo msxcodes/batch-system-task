@@ -10,7 +10,10 @@ import BlurGradientBox from "@/common/BlurGradientBox";
 
 export default function HeroSection() {
   return (
-    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 px-12 ">
+    <div
+      id="hero"
+      className="max-w-6xl md:py-12 mx-auto grid grid-cols-1 md:grid-cols-12 px-12 "
+    >
       <div className="space-y-4 my-16 md:my-24 relative col-span-6 ">
         <BlurGradientBox className="absolute blur-2xl w-44 h-32 bg-gradient-to-b left-16 top-8 md:top-0 md:left-44 from-[#ff5555] to-[#fde598] -z-10 " />
         <h1 className="text-4xl md:text-5xl font-extrabold ">
@@ -37,11 +40,11 @@ export default function HeroSection() {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              stroke-width="2"
+              strokeWidth="2"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>

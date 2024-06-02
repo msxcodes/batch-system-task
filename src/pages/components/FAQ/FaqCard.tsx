@@ -2,12 +2,13 @@ import React from "react";
 
 interface FaqCardProps {
   bgColor: boolean;
+  className?: string;
 }
 
-export default function FaqCard({ bgColor }: FaqCardProps) {
+export default function FaqCard({ bgColor, className }: FaqCardProps) {
   return (
     <div
-      className={` py-4 px-6 rounded-md space-y-2 ${
+      className={`${className} py-4 px-6 rounded-md space-y-2 ${
         bgColor ? "bg-[#ff5555] text-white" : "bg-white text-black"
       }`}
     >

@@ -7,7 +7,10 @@ import VisaCard from "../../../../public/features/visa-card.png";
 
 export default function AdvantageCard() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 mx-auto w-full">
+    <div
+      id="pricing"
+      className="grid grid-cols-1 md:grid-cols-12 mx-auto w-full"
+    >
       <div className="col-span-5 relative md:left-24 px-8 md:px-0">
         <Image
           src={BlurBox}

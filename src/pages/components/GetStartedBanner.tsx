@@ -24,7 +24,7 @@ export default function GetStartedBanner() {
           <button className="cursor-pointer">
             <Link
               href="#"
-              className="max-w-max bg-gray-100 flex items-center justify-center rounded-sm px-5 py-2.5 text-center text-lg font-[400] text-black focus:outline-none focus:ring-4 hover:bg-gray-300 cursor-pointer transition-all duration-300"
+              className="max-w-max bg-gray-100 flex items-center justify-center rounded-sm px-5 py-2.5 text-center text-lg font-[400] text-black focus:outline-none focus:ring-4 hover:bg-black hover:text-white hover:border cursor-pointer transition-all duration-300"
             >
               Download App
               <FaApple size={24} />
